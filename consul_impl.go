@@ -39,7 +39,12 @@ type consulDataStoreImpl struct {
 }
 
 func newConsulDataStoreImpl(builder *DataStoreBuilder, loggers ldlog.Loggers) (*consulDataStoreImpl, error) {
-	loggers.Infof("Using config: %+v", builder.consulConfig)
+	loggers.SetPrefix("ConsulDataStore:")
+	addr := builder.consulConfig.Address
+	if addr == "" {
+		addr = c.DefaultConfig().Address
+	}
+	loggers.Infof("Using Consul server at %s", addr)
 	client, err := c.NewClient(&builder.consulConfig)
 	if err != nil {
 		return nil, fmt.Errorf("unable to configure Consul client: %s", err)
@@ -82,6 +87,8 @@ func (store *consulDataStoreImpl) GetAll(
 func (store *consulDataStoreImpl) Init(allData []ldstoretypes.SerializedCollection) error {
 	kv := store.client.KV()
 
+	totalCount := 0
+
 	// Start by reading the existing keys; we will later delete any of these that weren't in allData.
 	pairs, _, err := kv.List(store.prefix, nil)
 	if err != nil {
@@ -95,6 +102,7 @@ func (store *consulDataStoreImpl) Init(allData []ldstoretypes.SerializedCollecti
 	ops := make([]*c.KVTxnOp, 0)
 
 	for _, coll := range allData {
+		totalCount += len(coll.Items)
 		for _, item := range coll.Items {
 			key := store.combinedItemKey(coll.Kind, item.Key)
 			op := &c.KVTxnOp{Verb: c.KVSet, Key: key, Value: item.Item.SerializedItem}
@@ -119,7 +127,11 @@ func (store *consulDataStoreImpl) Init(allData []ldstoretypes.SerializedCollecti
 	// Submit all the queued operations, using as many transactions as needed. (We're not really using
 	// transactions for atomicity, since we're not atomic anyway if there's more than one transaction,
 	// but batching them reduces the number of calls to the server.)
-	return batchOperations(kv, ops)
+	err = batchOperations(kv, ops)
+	if err == nil {
+		store.loggers.Infof("Initialized with %d items", totalCount)
+	}
+	return err
 }
 
 func (store *consulDataStoreImpl) Upsert(
@@ -146,6 +158,14 @@ func (store *consulDataStoreImpl) Upsert(
 		// Check whether the item is stale. If so, don't do the update (and return the existing item to
 		// DataStoreWrapper so it can be cached)
 		if oldVersion >= newItem.Version {
+			updateOrDelete := "update"
+			if newItem.Deleted {
+				updateOrDelete = "delete"
+			}
+			if store.loggers.IsDebugEnabled() { // COVERAGE: tests don't verify debug logging
+				store.loggers.Debugf(`Attempted to %s key: %s version: %d in "%s" with a version that is the same or older: %d`,
+					updateOrDelete, key, oldVersion, kind, newItem.Version)
+			}
 			return false, nil
 		}
 
