@@ -1,7 +1,7 @@
 // Package ldconsul provides a Consul-backed persistent data store for the LaunchDarkly Go SDK.
 //
 // For more details about how and why you can use a persistent data store, see:
-// https://docs.launchdarkly.com/v2.0/docs/using-a-persistent-feature-store
+// https://docs.launchdarkly.com/sdk/features/storing-data/consul#go
 //
 // To use the Consul data store with the LaunchDarkly client:
 //
