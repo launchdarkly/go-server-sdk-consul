@@ -5,7 +5,7 @@
 //
 // To use the Consul data store with the LaunchDarkly client:
 //
-//     import ldconsul "github.com/launchdarkly/go-server-sdk-consul"
+//     import ldconsul "github.com/launchdarkly/go-server-sdk-consul/v2"
 //
 //     config := ld.Config{
 //         DataStore: ldcomponents.PersistentDataStore(ldconsul.DataStore()),
