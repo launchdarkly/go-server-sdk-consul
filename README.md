@@ -1,12 +1,12 @@
 # LaunchDarkly Server-side SDK for Go - Consul integration
 
-[![Circle CI](https://circleci.com/gh/launchdarkly/go-server-sdk-consul.svg?style=shield)](https://circleci.com/gh/launchdarkly/go-server-sdk-consul) [![Documentation](https://img.shields.io/static/v1?label=go.dev&message=reference&color=00add8)](https://pkg.go.dev/github.com/launchdarkly/go-server-sdk-consul)
+[![Circle CI](https://circleci.com/gh/launchdarkly/go-server-sdk-consul.svg?style=shield)](https://circleci.com/gh/launchdarkly/go-server-sdk-consul) [![Documentation](https://img.shields.io/static/v1?label=go.dev&message=reference&color=00add8)](https://pkg.go.dev/github.com/launchdarkly/go-server-sdk-consul/v2)
 
 This library provides a [Consul](https://www.consul.io/)-backed persistence mechanism (data store) for the [LaunchDarkly Go SDK](https://github.com/launchdarkly/go-server-sdk), replacing the default in-memory data store. It uses the standard [Consul Go client](https://github.com/hashicorp/consul).
 
 This version of the library requires at least version 5.0.0 of the LaunchDarkly Go SDK. In earlier Go SDK versions, the `ldconsul` package was built into the SDK (`gopkg.in/launchdarkly/go-server-sdk.v4/ldconsul`).
 
-The minimum Go version is 1.14.
+The minimum Go version is 1.16.
 
 For more information, see also: [Using Consul as a persistent feature store](https://docs.launchdarkly.com/sdk/features/storing-data/consul#go).
 
@@ -20,11 +20,11 @@ This assumes that you have already installed the LaunchDarkly Go SDK.
 import (
     ld "gopkg.in/launchdarkly/go-server-sdk.v5"
     "gopkg.in/launchdarkly/go-server-sdk.v5/ldcomponents"
-    ldconsul "github.com/launchdarkly/go-server-sdk-consul"
+    ldconsul "github.com/launchdarkly/go-server-sdk-consul/v2"
 )
 ```
 
-2. When configuring your SDK client, add the Consul data store as a `PersistentDataStore`. You may specify any custom Consul options using the methods of `ConsulsDataStoreBuilder`. For instance, to customize the Consul hostname:
+2. When configuring your SDK client, add the Consul data store as a `PersistentDataStore`. You may specify any custom Consul options using the methods of `ConsulDataStoreBuilder`. For instance, to customize the Consul hostname:
 
 ```go
     var config ld.Config{}
