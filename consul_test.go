@@ -6,12 +6,12 @@ import (
 	c "github.com/hashicorp/consul/api"
 	"github.com/stretchr/testify/assert"
 
-	"gopkg.in/launchdarkly/go-sdk-common.v2/ldlog"
-	"gopkg.in/launchdarkly/go-sdk-common.v2/ldlogtest"
-	"gopkg.in/launchdarkly/go-server-sdk.v5/interfaces"
-	"gopkg.in/launchdarkly/go-server-sdk.v5/ldcomponents"
-	"gopkg.in/launchdarkly/go-server-sdk.v5/testhelpers"
-	"gopkg.in/launchdarkly/go-server-sdk.v5/testhelpers/storetest"
+	"github.com/launchdarkly/go-sdk-common/v3/ldlog"
+	"github.com/launchdarkly/go-sdk-common/v3/ldlogtest"
+	"github.com/launchdarkly/go-server-sdk/v6/interfaces"
+	"github.com/launchdarkly/go-server-sdk/v6/ldcomponents"
+	"github.com/launchdarkly/go-server-sdk/v6/testhelpers"
+	"github.com/launchdarkly/go-server-sdk/v6/testhelpers/storetest"
 )
 
 func TestConsulDataStore(t *testing.T) {
@@ -36,7 +36,7 @@ func TestLoggingAtStartup(t *testing.T) {
 		expectAddress(t, DataStore(),
 			"ConsulDataStore: Using Consul server at 127.0.0.1:8500")
 	})
-	
+
 	t.Run("custom address", func(t *testing.T) {
 		expectAddress(t, DataStore().Address("myhost:1000"),
 			"ConsulDataStore: Using Consul server at myhost:1000")
