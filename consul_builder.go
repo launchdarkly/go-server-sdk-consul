@@ -64,7 +64,7 @@ func (b *DataStoreBuilder) Prefix(prefix string) *DataStoreBuilder {
 func (b *DataStoreBuilder) CreatePersistentDataStore(
 	context interfaces.ClientContext,
 ) (interfaces.PersistentDataStore, error) {
-	store, err := newConsulDataStoreImpl(b, context.GetLogging().GetLoggers())
+	store, err := newConsulDataStoreImpl(b, context.GetLogging().Loggers)
 	return store, err
 }
 

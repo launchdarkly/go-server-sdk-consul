@@ -8,8 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/launchdarkly/go-sdk-common/v3/ldvalue"
-	"github.com/launchdarkly/go-server-sdk/v6/interfaces"
-	"github.com/launchdarkly/go-server-sdk/v6/ldcomponents"
+	"github.com/launchdarkly/go-server-sdk/v6/testhelpers"
 )
 
 func TestDataStoreBuilder(t *testing.T) {
@@ -42,7 +41,7 @@ func TestDataStoreBuilder(t *testing.T) {
 
 	t.Run("error for invalid address", func(t *testing.T) {
 		b := DataStore().Address("bad-scheme://no")
-		_, err := b.CreatePersistentDataStore(simpleTestContext{})
+		_, err := b.CreatePersistentDataStore(testhelpers.NewSimpleClientContext(""))
 		require.Error(t, err)
 		assert.Contains(t, err.Error(), "Unknown protocol")
 	})
@@ -50,20 +49,4 @@ func TestDataStoreBuilder(t *testing.T) {
 	t.Run("describe configuration", func(t *testing.T) {
 		assert.Equal(t, ldvalue.String("Consul"), DataStore().DescribeConfiguration())
 	})
-}
-
-// stub implementation of interfaces.ClientContext
-type simpleTestContext struct{}
-
-func (c simpleTestContext) GetBasic() interfaces.BasicConfiguration {
-	return interfaces.BasicConfiguration{}
-}
-
-func (c simpleTestContext) GetHTTP() interfaces.HTTPConfiguration {
-	return nil
-}
-
-func (c simpleTestContext) GetLogging() interfaces.LoggingConfiguration {
-	lc, _ := ldcomponents.Logging().CreateLoggingConfiguration(interfaces.BasicConfiguration{})
-	return lc
 }
