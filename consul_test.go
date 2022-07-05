@@ -8,9 +8,7 @@ import (
 
 	"github.com/launchdarkly/go-sdk-common/v3/ldlog"
 	"github.com/launchdarkly/go-sdk-common/v3/ldlogtest"
-	"github.com/launchdarkly/go-server-sdk/v6/interfaces"
-	"github.com/launchdarkly/go-server-sdk/v6/ldcomponents"
-	"github.com/launchdarkly/go-server-sdk/v6/testhelpers"
+	"github.com/launchdarkly/go-server-sdk/v6/subsystems"
 	"github.com/launchdarkly/go-server-sdk/v6/testhelpers/storetest"
 )
 
@@ -24,9 +22,8 @@ func TestConsulDataStore(t *testing.T) {
 func TestLoggingAtStartup(t *testing.T) {
 	expectAddress := func(t *testing.T, builder *DataStoreBuilder, message string) {
 		mockLog := ldlogtest.NewMockLog()
-		ctx := testhelpers.NewSimpleClientContext("").WithLogging(
-			ldcomponents.Logging().Loggers(mockLog.Loggers),
-		)
+		ctx := subsystems.BasicClientContext{}
+		ctx.Logging.Loggers = mockLog.Loggers
 		store, _ := builder.CreatePersistentDataStore(ctx)
 		defer store.Close()
 		mockLog.AssertMessageMatch(t, true, ldlog.Info, message)
@@ -43,11 +40,11 @@ func TestLoggingAtStartup(t *testing.T) {
 	})
 }
 
-func makeTestStore(prefix string) interfaces.PersistentDataStoreFactory {
+func makeTestStore(prefix string) subsystems.PersistentDataStoreFactory {
 	return DataStore().Prefix(prefix)
 }
 
-func makeFailedStore() interfaces.PersistentDataStoreFactory {
+func makeFailedStore() subsystems.PersistentDataStoreFactory {
 	// Here we ensure that all Consul operations will fail by providing an invalid hostname.
 	return DataStore().Address("not-a-real-consul-host")
 }
@@ -66,6 +63,6 @@ func clearTestData(prefix string) error {
 	return err
 }
 
-func setConcurrentModificationHook(store interfaces.PersistentDataStore, hook func()) {
+func setConcurrentModificationHook(store subsystems.PersistentDataStore, hook func()) {
 	store.(*consulDataStoreImpl).testTxHook = hook
 }

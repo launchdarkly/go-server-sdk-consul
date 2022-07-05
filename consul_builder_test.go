@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/launchdarkly/go-sdk-common/v3/ldvalue"
-	"github.com/launchdarkly/go-server-sdk/v6/testhelpers"
+	"github.com/launchdarkly/go-server-sdk/v6/subsystems"
 )
 
 func TestDataStoreBuilder(t *testing.T) {
@@ -41,7 +41,7 @@ func TestDataStoreBuilder(t *testing.T) {
 
 	t.Run("error for invalid address", func(t *testing.T) {
 		b := DataStore().Address("bad-scheme://no")
-		_, err := b.CreatePersistentDataStore(testhelpers.NewSimpleClientContext(""))
+		_, err := b.CreatePersistentDataStore(subsystems.BasicClientContext{})
 		require.Error(t, err)
 		assert.Contains(t, err.Error(), "Unknown protocol")
 	})

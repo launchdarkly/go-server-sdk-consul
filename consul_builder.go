@@ -4,7 +4,7 @@ import (
 	c "github.com/hashicorp/consul/api"
 
 	"github.com/launchdarkly/go-sdk-common/v3/ldvalue"
-	"github.com/launchdarkly/go-server-sdk/v6/interfaces"
+	"github.com/launchdarkly/go-server-sdk/v6/subsystems"
 )
 
 const (
@@ -62,8 +62,8 @@ func (b *DataStoreBuilder) Prefix(prefix string) *DataStoreBuilder {
 
 // CreatePersistentDataStore is called internally by the SDK to create the data store implementation object.
 func (b *DataStoreBuilder) CreatePersistentDataStore(
-	context interfaces.ClientContext,
-) (interfaces.PersistentDataStore, error) {
+	context subsystems.ClientContext,
+) (subsystems.PersistentDataStore, error) {
 	store, err := newConsulDataStoreImpl(b, context.GetLogging().Loggers)
 	return store, err
 }
