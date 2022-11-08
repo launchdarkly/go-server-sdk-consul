@@ -60,10 +60,8 @@ func (b *DataStoreBuilder) Prefix(prefix string) *DataStoreBuilder {
 	return b
 }
 
-// CreatePersistentDataStore is called internally by the SDK to create the data store implementation object.
-func (b *DataStoreBuilder) CreatePersistentDataStore(
-	context subsystems.ClientContext,
-) (subsystems.PersistentDataStore, error) {
+// Build is called internally by the SDK.
+func (b *DataStoreBuilder) Build(context subsystems.ClientContext) (subsystems.PersistentDataStore, error) {
 	store, err := newConsulDataStoreImpl(b, context.GetLogging().Loggers)
 	return store, err
 }
