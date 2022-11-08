@@ -41,7 +41,7 @@ func TestDataStoreBuilder(t *testing.T) {
 
 	t.Run("error for invalid address", func(t *testing.T) {
 		b := DataStore().Address("bad-scheme://no")
-		_, err := b.CreatePersistentDataStore(subsystems.BasicClientContext{})
+		_, err := b.Build(subsystems.BasicClientContext{})
 		require.Error(t, err)
 		assert.Contains(t, err.Error(), "Unknown protocol")
 	})

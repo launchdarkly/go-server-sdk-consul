@@ -6,7 +6,7 @@ This library provides a [Consul](https://www.consul.io/)-backed persistence mech
 
 This version of the library requires at least version 6.0.0 of the LaunchDarkly Go SDK. In earlier Go SDK versions, the `ldconsul` package was built into the SDK (`gopkg.in/launchdarkly/go-server-sdk.v4/ldconsul`).
 
-The minimum Go version is 1.16.
+The minimum Go version is 1.18.
 
 For more information, see also: [Using Consul as a persistent feature store](https://docs.launchdarkly.com/sdk/features/storing-data/consul#go).
 
