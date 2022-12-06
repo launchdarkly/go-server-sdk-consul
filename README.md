@@ -4,7 +4,7 @@
 
 This library provides a [Consul](https://www.consul.io/)-backed persistence mechanism (data store) for the [LaunchDarkly Go SDK](https://github.com/launchdarkly/go-server-sdk), replacing the default in-memory data store. It uses the standard [Consul Go client](https://github.com/hashicorp/consul).
 
-This version of the library requires at least version 6.0.0 of the LaunchDarkly Go SDK. In earlier Go SDK versions, the `ldconsul` package was built into the SDK (`gopkg.in/launchdarkly/go-server-sdk.v4/ldconsul`).
+This version of the library requires at least version 6.0.0 of the LaunchDarkly Go SDK; for versions of the library to use with earlier SDK versions, see the changelog.
 
 The minimum Go version is 1.18.
 
