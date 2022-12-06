@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/hashicorp/consul/api v1.12.0
-	github.com/launchdarkly/go-sdk-common/v3 v3.0.0-alpha.pub.15
-	github.com/launchdarkly/go-server-sdk/v6 v6.0.0-alpha.pub.11
+	github.com/launchdarkly/go-sdk-common/v3 v3.0.0
+	github.com/launchdarkly/go-server-sdk/v6 v6.0.0-alpha.pub.13
 	github.com/stretchr/testify v1.7.0
 )
 
@@ -25,9 +25,9 @@ require (
 	github.com/launchdarkly/ccache v1.1.0 // indirect
 	github.com/launchdarkly/eventsource v1.6.2 // indirect
 	github.com/launchdarkly/go-jsonstream/v3 v3.0.0 // indirect
-	github.com/launchdarkly/go-sdk-events/v2 v2.0.0-alpha.pub.8 // indirect
+	github.com/launchdarkly/go-sdk-events/v2 v2.0.0 // indirect
 	github.com/launchdarkly/go-semver v1.0.2 // indirect
-	github.com/launchdarkly/go-server-sdk-evaluation/v2 v2.0.0-alpha.pub.8 // indirect
+	github.com/launchdarkly/go-server-sdk-evaluation/v2 v2.0.1 // indirect
 	github.com/launchdarkly/go-test-helpers/v3 v3.0.2 // indirect
 	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/mattn/go-colorable v0.1.6 // indirect
