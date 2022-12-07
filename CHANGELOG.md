@@ -2,6 +2,10 @@
 
 All notable changes to the LaunchDarkly Go SDK Consul integration will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.0.1] - 2022-12-07
+### Fixed:
+- Updated SDK dependency to use v6.0.0 release.
+
 ## [2.0.0] - 2022-12-07
 This release corresponds to the 6.0.0 release of the LaunchDarkly Go SDK. Any application code that is being updated to use the 6.0.0 SDK, and was using a 1.x version of `go-server-sdk-consul`, should now use a 2.x version instead.
 
