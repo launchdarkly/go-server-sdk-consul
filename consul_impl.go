@@ -7,7 +7,7 @@ import (
 	c "github.com/hashicorp/consul/api"
 
 	"github.com/launchdarkly/go-sdk-common/v3/ldlog"
-	"github.com/launchdarkly/go-server-sdk/v6/subsystems/ldstoretypes"
+	"github.com/launchdarkly/go-server-sdk/v7/subsystems/ldstoretypes"
 )
 
 // Implementation notes:
