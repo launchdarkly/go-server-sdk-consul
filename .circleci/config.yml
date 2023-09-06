@@ -29,13 +29,13 @@ jobs:
       with-coverage:
         type: boolean
         default: false
-  
+
     docker:
       - image: <<parameters.docker-image>>
         environment:
           CIRCLE_TEST_REPORTS: /tmp/circle-reports
           CIRCLE_ARTIFACTS: /tmp/circle-artifacts
-      - image: consul
+      - image: hashicorp/consul
 
     steps:
       - checkout
@@ -59,7 +59,7 @@ jobs:
             mkdir -p $CIRCLE_TEST_REPORTS
             mkdir -p $CIRCLE_ARTIFACTS
             make test | tee $CIRCLE_ARTIFACTS/report.txt
-    
+
       - when:
           condition: <<parameters.with-coverage>>
           steps:
@@ -71,12 +71,12 @@ jobs:
                 name: Store coverage results
                 command: cp build/coverage* /tmp/circle-artifacts
                 when: always
-    
+
       - run:
           name: Process test results
           command: go-junit-report < $CIRCLE_ARTIFACTS/report.txt > $CIRCLE_TEST_REPORTS/junit.xml
           when: always
-      
+
       - store_test_results:
           path: /tmp/circle-reports
 
