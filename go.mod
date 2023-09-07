@@ -1,4 +1,4 @@
-module github.com/launchdarkly/go-server-sdk-consul/v2
+module github.com/launchdarkly/go-server-sdk-consul/v3
 
 go 1.18
 

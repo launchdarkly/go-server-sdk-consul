@@ -1,6 +1,6 @@
 # LaunchDarkly Server-side SDK for Go - Consul integration
 
-[![Circle CI](https://circleci.com/gh/launchdarkly/go-server-sdk-consul.svg?style=shield)](https://circleci.com/gh/launchdarkly/go-server-sdk-consul) [![Documentation](https://img.shields.io/static/v1?label=go.dev&message=reference&color=00add8)](https://pkg.go.dev/github.com/launchdarkly/go-server-sdk-consul/v2)
+[![Circle CI](https://circleci.com/gh/launchdarkly/go-server-sdk-consul.svg?style=shield)](https://circleci.com/gh/launchdarkly/go-server-sdk-consul) [![Documentation](https://img.shields.io/static/v1?label=go.dev&message=reference&color=00add8)](https://pkg.go.dev/github.com/launchdarkly/go-server-sdk-consul/v3)
 
 This library provides a [Consul](https://www.consul.io/)-backed persistence mechanism (data store) for the [LaunchDarkly Go SDK](https://github.com/launchdarkly/go-server-sdk), replacing the default in-memory data store. It uses the standard [Consul Go client](https://github.com/hashicorp/consul).
 
@@ -20,7 +20,7 @@ This assumes that you have already installed the LaunchDarkly Go SDK.
 import (
     ld "github.com/launchdarkly/go-server-sdk/v7"
     "github.com/launchdarkly/go-server-sdk/v7/ldcomponents"
-    ldconsul "github.com/launchdarkly/go-server-sdk-consul/v2"
+    ldconsul "github.com/launchdarkly/go-server-sdk-consul/v3"
 )
 ```
 
