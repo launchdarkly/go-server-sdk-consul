@@ -22,11 +22,6 @@ jobs:
       fail-fast: false
       matrix:
         go-version: ${{ fromJSON(needs.go-versions.outputs.matrix) }}
-    services:
-      consul:
-        image: hashicorp/consul
-        ports:
-          - 8500:8500
     uses: ./.github/workflows/common_ci.yml
     with:
       go-version: ${{ matrix.go-version }}
