@@ -259,8 +259,7 @@ func batchOperations(kv *c.KV, ops []*c.KVTxnOp) error {
 			for _, te := range resp.Errors { // COVERAGE: see above
 				errs = append(errs, te.What)
 			}
-			//nolint:stylecheck // this error message is capitalized on purpose
-			return fmt.Errorf("Consul transaction failed: %s", strings.Join(errs, ", ")) // COVERAGE: see above
+			return fmt.Errorf("Consul transaction failed: %s", strings.Join(errs, ", ")) //nolint:staticcheck // COVERAGE: see above
 		}
 		i = j
 	}

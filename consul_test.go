@@ -25,7 +25,7 @@ func TestLoggingAtStartup(t *testing.T) {
 		ctx := subsystems.BasicClientContext{}
 		ctx.Logging.Loggers = mockLog.Loggers
 		store, _ := builder.Build(ctx)
-		defer store.Close()
+		defer store.Close() //nolint:errcheck // test cleanup
 		mockLog.AssertMessageMatch(t, true, ldlog.Info, message)
 	}
 
