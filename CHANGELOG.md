@@ -2,6 +2,10 @@
 
 All notable changes to the LaunchDarkly Go SDK Consul integration will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [3.0.0] - 2023-10-11
+### Added:
+- Added support for SDK v7 to support technology migrations.
+
 ## [2.0.2] - 2022-12-07
 ### Fixed:
 - Updated SDK dependency.
