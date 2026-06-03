@@ -2,6 +2,13 @@
 
 All notable changes to the LaunchDarkly Go SDK Consul integration will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [3.0.1](https://github.com/launchdarkly/go-server-sdk-consul/compare/v3.0.0...v3.0.1) (2026-06-03)
+
+
+### Bug Fixes
+
+* bump SDK deps for EasyJSON removal (v4 cascade) ([#34](https://github.com/launchdarkly/go-server-sdk-consul/issues/34)) ([19e24a5](https://github.com/launchdarkly/go-server-sdk-consul/commit/19e24a5974b30c8c9a3bfff1f5eb860280ba8d2b))
+
 ## [3.0.0] - 2023-10-11
 ### Added:
 - Added support for SDK v7 to support technology migrations.
