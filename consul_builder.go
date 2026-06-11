@@ -3,7 +3,7 @@ package ldconsul
 import (
 	c "github.com/hashicorp/consul/api"
 
-	"github.com/launchdarkly/go-sdk-common/v4/ldvalue"
+	"github.com/launchdarkly/go-sdk-common/v3/ldvalue"
 	"github.com/launchdarkly/go-server-sdk/v7/subsystems"
 )
 
