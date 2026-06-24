@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Unit Tests and Coverage'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: launchdarkly/gh-actions/actions/persistent-stores@persistent-stores-v0
         with:
           consul: true
