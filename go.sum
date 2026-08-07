@@ -74,8 +74,8 @@ github.com/launchdarkly/go-semver v1.0.3 h1:agIy/RN3SqeQDIfKkl+oFslEdeIs7pgsJBs3
 github.com/launchdarkly/go-semver v1.0.3/go.mod h1:xFmMwXba5Mb+3h72Z+VeSs9ahCvKo2QFUTHRNHVqR28=
 github.com/launchdarkly/go-server-sdk-evaluation/v3 v3.0.1 h1:rTgcYAFraGFj7sBMB2b7JCYCm0b9kph4FaMX02t4osQ=
 github.com/launchdarkly/go-server-sdk-evaluation/v3 v3.0.1/go.mod h1:fPS5d+zOsgFnMunj+Ki6jjlZtFvo4h9iNbtNXxzYn58=
-github.com/launchdarkly/go-server-sdk/v7 v7.15.4 h1:Mp0P1Kqds6ekOdre6+PBhPV2wNhjDnf0GzGAyq4ugSg=
-github.com/launchdarkly/go-server-sdk/v7 v7.15.4/go.mod h1:oRUugzU7uSGm2vg7iLdJg2R/aZbqgrt07layMPLyVsw=
+github.com/launchdarkly/go-server-sdk/v7 v7.15.5 h1:RbDtIrzfLonhzxY2+iCUVZjW5SWpK9sxdtiySiF1c4c=
+github.com/launchdarkly/go-server-sdk/v7 v7.15.5/go.mod h1:FhSoAh7kh/CcSFFnjpXwqXbn+WjixhtcOZVwsJXy2gY=
 github.com/launchdarkly/go-test-helpers/v3 v3.1.0 h1:E3bxJMzMoA+cJSF3xxtk2/chr1zshl1ZWa0/oR+8bvg=
 github.com/launchdarkly/go-test-helpers/v3 v3.1.0/go.mod h1:Ake5+hZFS/DmIGKx/cizhn5W9pGA7pplcR7xCxWiLIo=
 github.com/mailru/easyjson v0.7.7 h1:UGYAvKxe3sBsEDzO8ZeWOSlIQfWFlxbzLZe7hwFURr0=
@@ -151,8 +151,8 @@ golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210303074136-134d130e1a04/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.38.0 h1:3yZWxaJjBmCWXqhN1qh02AkOnCQ1poK6oF+a7xWL6Gc=
-golang.org/x/sys v0.38.0/go.mod h1:OgkHotnGiDImocRcuBABYBEXf8A9a87e/uXjp9XT3ks=
+golang.org/x/sys v0.45.0 h1:dO4czNzziLiiXplLQgBCEpCvXQ3dnkn0SdaZSYdQ+FY=
+golang.org/x/sys v0.45.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
