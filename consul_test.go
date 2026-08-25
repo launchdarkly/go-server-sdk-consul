@@ -31,7 +31,7 @@ func TestLoggingAtStartup(t *testing.T) {
 
 	t.Run("default address", func(t *testing.T) {
 		expectAddress(t, DataStore(),
-			"ConsulDataStore: Using Consul server at 127.0.0.1:8500")
+			"ConsulDataStore: Using Consul server at localhost:8500")
 	})
 
 	t.Run("custom address", func(t *testing.T) {
