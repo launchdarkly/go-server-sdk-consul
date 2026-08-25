@@ -1,6 +1,6 @@
 module github.com/launchdarkly/go-server-sdk-consul/v3
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/hashicorp/consul/api v1.12.0
