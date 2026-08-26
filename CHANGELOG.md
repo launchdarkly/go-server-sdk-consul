@@ -2,6 +2,13 @@
 
 All notable changes to the LaunchDarkly Go SDK Consul integration will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [3.0.4](https://github.com/launchdarkly/go-server-sdk-consul/compare/v3.0.3...v3.0.4) (2026-08-25)
+
+
+### Bug Fixes
+
+* Bump minimum Go version to 1.26 ([#55](https://github.com/launchdarkly/go-server-sdk-consul/issues/55)) ([325a23d](https://github.com/launchdarkly/go-server-sdk-consul/commit/325a23d56d28e257679ad224b96cd92a50858185))
+
 ## [3.0.3](https://github.com/launchdarkly/go-server-sdk-consul/compare/v3.0.2...v3.0.3) (2026-08-07)
 
 
