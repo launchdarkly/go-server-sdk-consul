@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/hashicorp/consul/api v1.34.4
 	github.com/launchdarkly/go-sdk-common/v3 v3.5.1
-	github.com/launchdarkly/go-server-sdk/v7 v7.16.0
+	github.com/launchdarkly/go-server-sdk/v7 v7.17.0
 	github.com/stretchr/testify v1.12.1
 )
 
