@@ -13,7 +13,7 @@ jobs:
     name: 'Unit Tests and Coverage'
     steps:
       - uses: actions/checkout@v7
-      - uses: launchdarkly/gh-actions/actions/persistent-stores@persistent-stores-v0
+      - uses: launchdarkly/gh-actions/actions/persistent-stores@jb/sdk-3244/consul-2-0
         with:
           consul: true
       - name: Setup Go ${{ inputs.go-version }}
