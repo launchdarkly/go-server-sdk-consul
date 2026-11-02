@@ -1,9 +1,9 @@
 module github.com/launchdarkly/go-server-sdk-consul/v3
 
-go 1.26.7
+go 1.26.9
 
 require (
-	github.com/hashicorp/consul/api v1.34.5
+	github.com/hashicorp/consul/api v1.35.0
 	github.com/launchdarkly/go-sdk-common/v3 v3.6.0
 	github.com/launchdarkly/go-server-sdk/v7 v7.21.1
 	github.com/stretchr/testify v1.12.1
