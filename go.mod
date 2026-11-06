@@ -5,7 +5,7 @@ go 1.26.9
 require (
 	github.com/hashicorp/consul/api v1.35.0
 	github.com/launchdarkly/go-sdk-common/v3 v3.6.0
-	github.com/launchdarkly/go-server-sdk/v7 v7.21.1
+	github.com/launchdarkly/go-server-sdk/v7 v7.21.2
 	github.com/stretchr/testify v1.12.1
 )
 
@@ -26,7 +26,7 @@ require (
 	github.com/hashicorp/serf v0.10.4 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/launchdarkly/ccache v1.1.0 // indirect
-	github.com/launchdarkly/eventsource v1.14.0 // indirect
+	github.com/launchdarkly/eventsource v1.14.2 // indirect
 	github.com/launchdarkly/go-jsonstream/v3 v3.1.2 // indirect
 	github.com/launchdarkly/go-sdk-events/v3 v3.8.1 // indirect
 	github.com/launchdarkly/go-semver v1.0.3 // indirect
